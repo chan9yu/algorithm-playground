@@ -8,15 +8,12 @@
 // 예를 들어, 아래와 같이 10 개의 OX 문제에서 답이 맞은 문제의 경우에는 1로 표시하고, 틀린 경우에는
 // 0으로 표시하였을 때, 점수 계산은 아래 표와 같이 계산되어, 총 점수는 1+1+2+3+1+2=10 점이다.
 // 시험문제의 채점 결과가 주어졌을 때, 총 점수를 계산하는 프로그램을 작성하세요.
+
 function solution(arr) {
-  let answer = 0;
-  let cnt = 0;
-  arr.forEach((v) => {
-    cnt = v === 1 ? (cnt += 1) : (cut = 0);
-    answer += cnt;
-  });
-  return answer;
+	let answer = 0
+
+	return answer
 }
 
-let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
-console.log(solution(arr));
+let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0]
+console.log(solution(arr))
