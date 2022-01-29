@@ -5,7 +5,9 @@
 //* 알파벳 이외의 문자들의 무시합니다.
 
 function solution(s) {
-	let answer = 'YES'
+	let answer
+	s = s.toLowerCase().replace(/[^a-z]/g, '')
+	s.split('').reverse().join('') === s ? (answer = 'Yes') : (answer = 'No')
 
 	return answer
 }

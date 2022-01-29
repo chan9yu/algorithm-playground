@@ -5,6 +5,16 @@
 
 function solution(s) {
 	let answer = ''
+	let cnt = 1
+	s = s + ' '
+
+	for (let i = 0; i < s.length - 1; i++) {
+		if (s[i] === s[i + 1]) cnt += 1
+		else {
+			cnt === 1 ? (answer += s[i]) : (answer += s[i] + cnt.toString())
+			cnt = 1
+		}
+	}
 
 	return answer
 }

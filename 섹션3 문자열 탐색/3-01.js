@@ -5,9 +5,12 @@
 
 function solution(s) {
 	let answer
+	s.toUpperCase() === s.split('').reverse().join('').toUpperCase()
+		? (answer = 'Yes')
+		: (answer = 'No')
 
 	return answer
 }
 
-let str = 'goooG'
-console.log(solution(str))
+console.log(solution('goooG'))
+console.log(solution('gooob'))

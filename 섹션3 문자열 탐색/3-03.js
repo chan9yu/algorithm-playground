@@ -5,6 +5,7 @@
 
 function solution(str) {
 	let answer = ''
+	str.split('').map(v => !isNaN(v) && (answer += v))
 
 	return Number(answer)
 }

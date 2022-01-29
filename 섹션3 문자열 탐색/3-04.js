@@ -3,6 +3,21 @@
 
 function solution(s, t) {
 	let answer = []
+	let p = 1000
+
+	//memo 오른쪽 진행
+	for (let v of s) {
+		v === t ? (p = 0) : (p += 1)
+		answer.push(p)
+	}
+
+	p = 1000
+
+	//memo 왼쪽 진행
+	for (let i = s.length - 1; i >= 0; i--) {
+		s[i] === t ? (p = 0) : (p += 1)
+		answer[i] = Math.min(answer[i], p)
+	}
 
 	return answer
 }
