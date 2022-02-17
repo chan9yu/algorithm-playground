@@ -20,14 +20,25 @@
 /**
  * * 2) Cache Hit
  * *  해야할 작업이 캐시에 있는 상태로 위 상태에서 만약 3번 작업을 CPU가 사용한다면 Cache Hit가 되고,
- * *  63번 앞에 있는 5, 2번 작업은 한 칸 뒤로 밀리고, 3번이 맨 앞으로 위치하게 된다.
+ * *  3번 앞에 있는 5, 2번 작업은 한 칸 뒤로 밀리고, 3번이 맨 앞으로 위치하게 된다.
  * *  5 2 3 1 6 ---> 3 5 2 1 6 캐시의 크기가 주어지고,
  * *  캐시가 비어있는 상태에서 N개의 작업을 CPU가 차례로 처리한다면 N개의 작업을 처리한 후
  * *  캐시메모리의 상태를 가장 최근 사용된 작업부터 차례대로 출력하는 프로그램을 작성하세요.
  */
 
 function solution(size, arr) {
-	let answer
+	let answer = Array.from({ length: size }).fill(0)
+
+	arr.forEach(e => {
+		let pos = -1
+		for (let i = 0; i < size; i++) e === arr[i] && (pos = i)
+		if (pos === -1) {
+			for (let i = size - 1; i >= 1; i--) answer[i] = answer[i - 1]
+		} else {
+			for (let i = pos; i >= 1; i--) answer[i] = answer[i - 1]
+		}
+		answer[0] = e
+	})
 
 	return answer
 }
