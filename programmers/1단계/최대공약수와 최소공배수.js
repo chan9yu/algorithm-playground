@@ -3,10 +3,10 @@
 // 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.
 
 function solution(n, m) {
-  const gcd = (a, b) => (a % b === 0 ? b : gcd(b, a % b));
-  const lcm = (a, b) => (a * b) / gcd(a, b);
-  return [gcd(n, m), lcm(n, m)];
+	const gcd = (a, b) => (a % b === 0 ? b : gcd(b, a % b))
+	const lcm = (a, b) => (a * b) / gcd(a, b)
+	return [gcd(n, m), lcm(n, m)]
 }
 
-console.log(solution(3, 12)); // [3, 12]
-console.log(solution(2, 5)); // [1, 10]
+console.log(solution(3, 12)) // [3, 12]
+console.log(solution(2, 5)) // [1, 10]
