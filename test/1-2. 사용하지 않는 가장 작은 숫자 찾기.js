@@ -5,7 +5,7 @@
 //* - 중복된 숫자가 있는 경우도 동작해야함
 
 const solution = ids => {
-	let answer = []
+	const answer = []
 
 	ids.sort((a, b) => a - b)
 	ids[0] !== 0 && answer.push(0)
@@ -26,3 +26,9 @@ console.log(solution(arr)) //* reutrn 7
 
 arr = [1, 1, 2, 3, 4, 6]
 console.log(solution(arr)) //* reutrn 0
+
+arr = [5, 2, 4, 6, 1, 7, 0]
+console.log(solution(arr)) //* reutrn 3
+
+arr = [0, 0, 0, 0, 0]
+console.log(solution(arr)) //* reutrn 1

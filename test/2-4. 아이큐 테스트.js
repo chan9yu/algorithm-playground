@@ -3,8 +3,8 @@
 
 const solution = numbers => {
 	let numArr = numbers.split(' ')
-	let odd = []
-	let even = []
+	const odd = []
+	const even = []
 
 	numArr.forEach(e => (Number(e) % 2 ? odd.push(e) : even.push(e)))
 

@@ -2,7 +2,7 @@
 //* 이름이 4글자면 친구입니다. 친구를 찾는 함수를 작성해주세요.
 
 const solution = users => {
-	let friends = []
+	const friends = []
 	users.forEach(e => e.length === 4 && friends.push(e))
 
 	return friends
