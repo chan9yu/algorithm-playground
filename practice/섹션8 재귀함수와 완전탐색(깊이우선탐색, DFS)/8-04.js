@@ -4,17 +4,17 @@
 
 function solution(n) {
 	let answer = []
-	let ch = Array.from({ length: n + 1 }).fill(0)
+	let checkArr = Array.from({ length: n + 1 }).fill(0)
 
 	function DFS(v) {
 		if (v === n + 1) {
 			let tmp = ''
-			for (let i = 1; i <= n; i++) ch[i] === 1 && (tmp += i + ' ')
+			checkArr.forEach((e, i) => e === 1 && (tmp += i + ' '))
 			tmp.length > 0 && answer.push(tmp.trim())
 		} else {
-			ch[v] = 1
+			checkArr[v] = 1
 			DFS(v + 1)
-			ch[v] = 0
+			checkArr[v] = 0
 			DFS(v + 1)
 		}
 	}

@@ -6,12 +6,12 @@ function solution(v) {
 
 	function DFS(n) {
 		if (n > 7) return
-		//memo 중위순회
-		//* answer += n
-		DFS(n * 2)
 		//memo 전위순회
 		//* answer += n
-		DFS(n * 2 + 1)
+		DFS(n * 2) //memo 왼쪽 자식 방향
+		//memo 중위순회
+		//* answer += n
+		DFS(n * 2 + 1) //memo 오른쪽 자식 방향
 		//memo 후위순회
 		answer += n
 	}

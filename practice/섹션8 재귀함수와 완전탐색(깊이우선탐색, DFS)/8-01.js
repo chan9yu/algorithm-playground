@@ -6,10 +6,8 @@ function solution(n) {
 
 	function DFS(L) {
 		if (L === 0) return
-		else {
-			DFS(L - 1)
-			answer += L.toString()
-		}
+		DFS(L - 1)
+		answer += `${L.toString()} `
 	}
 
 	DFS(n)

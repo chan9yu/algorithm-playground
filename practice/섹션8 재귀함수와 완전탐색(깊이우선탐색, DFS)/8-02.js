@@ -5,10 +5,10 @@
 function solution(number) {
 	let answer = ''
 
-	function DFS(n) {
-		if (n === 0) return
-		DFS(parseInt(n / 2))
-		answer += (n % 2).toString()
+	function DFS(L) {
+		if (L === 0) return
+		DFS(parseInt(L / 2, 10))
+		answer += `${(L % 2).toString()}`
 	}
 
 	DFS(number)
