@@ -12,7 +12,6 @@ function solution(number) {
 	}
 
 	DFS(number)
-
 	return answer
 }
 

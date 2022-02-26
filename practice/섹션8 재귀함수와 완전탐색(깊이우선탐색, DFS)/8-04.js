@@ -20,7 +20,6 @@ function solution(n) {
 	}
 
 	DFS(1)
-
 	return answer
 }
 

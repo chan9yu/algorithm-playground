@@ -17,7 +17,6 @@ function solution(v) {
 	}
 
 	DFS(v)
-
 	return answer
 }
 

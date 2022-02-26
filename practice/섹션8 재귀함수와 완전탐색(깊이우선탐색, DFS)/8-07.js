@@ -18,7 +18,6 @@ function solution(m, ps, pt) {
 	}
 
 	DFS(0, 0, 0)
-
 	return answer
 }
 

@@ -11,7 +11,6 @@ function solution(n) {
 	}
 
 	DFS(n)
-
 	return answer
 }
 
