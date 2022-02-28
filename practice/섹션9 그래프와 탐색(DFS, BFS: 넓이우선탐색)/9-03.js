@@ -15,8 +15,27 @@
 //* 위의 지도에서 출발점에서 도착점까지 갈 수 있는 방법의 수는 8가지이다.
 
 function solution(board) {
-	let answer
+	let answer = 0
+	let dx = [-1, 0, 1, 0]
+	let dy = [0, 1, 0, -1]
 
+	function DFS(x, y) {
+		if (x === 6 && y === 6) answer += 1
+		else {
+			for (let k = 0; k < 4; k++) {
+				let nx = x + dx[k] //memo 다음 x좌표
+				let ny = y + dy[k] //memo 다음 y좌표
+				if (nx >= 0 && nx <= 6 && ny >= 0 && ny <= 6 && board[nx][ny] === 0) {
+					board[nx][ny] = 1
+					DFS(nx, ny)
+					board[nx][ny] = 0
+				}
+			}
+		}
+	}
+
+	board[0][0] = 1
+	DFS(0, 0)
 	return answer
 }
 
@@ -29,4 +48,4 @@ let arr = [
 	[1, 1, 0, 1, 1, 0, 0],
 	[1, 0, 0, 0, 0, 0, 0]
 ]
-console.log(solution(arr))
+console.log(solution(arr)) //* return 8
