@@ -4,20 +4,19 @@
 //* 맨 앞에 서 있는 선생님이 볼 수 있는 학생의 수를 구하는 프로그램을 작성하세요.
 //* (앞에 서 있는 사람들보다 크면 보이고, 작거나 같으면 보이지 않습니다.)
 
-function solution(arr) {
-	//memo 맨 앞에 서 있는 학생 처리
-	let answer = 1
-	let max = arr[0]
+const solution = (arr) => {
+  let res = 0;
+  let max = Number.MIN_SAFE_INTEGER;
 
-	for (let i = 1; i < arr.length; i++) {
-		if (arr[i] > max) {
-			answer += 1
-			max = arr[i]
-		}
-	}
+  arr.forEach((e) => {
+    if (e > max) {
+      max = e;
+      res += 1;
+    }
+  });
 
-	return answer
-}
+  return res;
+};
 
-let arr = [130, 135, 148, 140, 145, 150, 150, 153]
-console.log(solution(arr))
+const arr = [130, 135, 148, 140, 145, 150, 150, 153];
+console.log(solution(arr)); // 5

@@ -5,40 +5,39 @@
 //* 11 25 50 53 15
 //* 19 27 29 37 27
 //* 19 13 30 13 19
-//* N*N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선의 합 중 가장 큰 합을 출력하세요.
+//* N * N의 격자판이 주어지면 각 행의 합, 각 열의 합, 두 대각선의 합 중 가장 큰 합을 출력하세요.
 
-function solution(arr) {
-	let answer = Number.MIN_SAFE_INTEGER
-	let n = arr.length
-	let sum1 = 0 //memo 행의 합계를 담는 변수
-	let sum2 = 0 //memo 열의 합계를 담는 변수
+const solution = (arr) => {
+  let max = Number.MIN_SAFE_INTEGER;
+  let sum = 0;
 
-	//memo 1. 행과 열 합계중 제일 큰 값 찾기
-	for (let i = 0; i < n; i++) {
-		sum1 = sum2 = 0
-		for (let j = 0; j < n; j++) {
-			sum1 += arr[i][j] //memo 행 번호를 고정 후 값 누적
-			sum2 += arr[j][i] //memo 열 번호를 고정 후 값 누적
-		}
-		answer = Math.max(answer, sum1, sum2)
-	}
+  const calc = () => {
+    if (max < sum) max = sum;
+    sum = 0;
+  };
 
-	sum1 = sum2 = 0 //memo 두 대각선의 합계를 담는 변수
-	//memo 2. 두 대각선의 합계중 제일 큰 값 찾기
-	for (let i = 0; i < n; i++) {
-		sum1 += arr[i][i]
-		sum2 += arr[i][n - i - 1]
-	}
-	answer = Math.max(answer, sum1, sum2)
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) sum += arr[i][j];
+    calc();
 
-	return answer
-}
+    for (let j = 0; j < arr.length; j++) sum += arr[j][i];
+    calc();
+  }
 
-let arr = [
-	[10, 13, 10, 12, 15],
-	[12, 39, 30, 23, 11],
-	[11, 25, 50, 53, 15],
-	[19, 27, 29, 37, 27],
-	[19, 13, 30, 13, 19]
-]
-console.log(solution(arr))
+  for (let i = 0; i < arr.length; i++) sum += arr[i][i];
+  calc();
+
+  for (let i = arr.length - 1; i >= 0; i--) sum += arr[i][i];
+  calc();
+
+  return max;
+};
+
+const arr = [
+  [10, 13, 10, 12, 15],
+  [12, 39, 30, 23, 11],
+  [11, 25, 50, 53, 15],
+  [19, 27, 29, 37, 27],
+  [19, 13, 30, 13, 19],
+];
+console.log(solution(arr)); // 155

@@ -1,3 +1,3 @@
-# 코딩테스트 연습하기
+# 🧑🏻‍💻 Algorithm Playground
 
 공부해야해요..ㅠㅠ
