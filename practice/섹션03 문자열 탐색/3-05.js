@@ -3,21 +3,21 @@
 //* 반복되는 문자 바로 오른쪽에 반복 횟수를 표기하는 방법으로 문자열을 압축하는 프로그램을 작성하시오.
 //* 단 반복횟수가 1인 경우 생략합니다.
 
-function solution(s) {
-	let answer = ''
-	let cnt = 1
-	s = s + ' '
+const solution = (s) => {
+  s = s.split("");
+  let cnt = 0;
+  const res = [];
 
-	for (let i = 0; i < s.length - 1; i++) {
-		if (s[i] === s[i + 1]) cnt += 1
-		else {
-			cnt === 1 ? (answer += s[i]) : (answer += s[i] + cnt.toString())
-			cnt = 1
-		}
-	}
+  for (let i = 0; i < s.length; i++) {
+    cnt += 1;
+    if (s[i] !== s[i + 1]) {
+      res.push(s[i]);
+      cnt > 1 && res.push(cnt);
+      cnt = 0;
+    }
+  }
 
-	return answer
-}
+  return res.join("");
+};
 
-let str = 'KKHSSSSSSSE'
-console.log(solution(str))
+console.log(solution("KKHSSSSSSSE")); // "K2HS7E"

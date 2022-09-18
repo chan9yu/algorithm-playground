@@ -4,13 +4,12 @@
 //* 단 회문을 검사할 때 알파벳만 가지고 회문을 검사하며, 대소문자를 구분하지 않습니다.
 //* 알파벳 이외의 문자들의 무시합니다.
 
-function solution(s) {
-	let answer
-	s = s.toLowerCase().replace(/[^a-z]/g, '')
-	s.split('').reverse().join('') === s ? (answer = 'Yes') : (answer = 'No')
+const solution = (s) => {
+  const str = s.toUpperCase().replace(/[^A-Z]/g, "");
+  const str2 = str.split("").reverse().join("");
 
-	return answer
-}
+  return str === str2 ? "YES" : "NO";
+};
 
-let str = 'found7, time: study; Yduts; emit, 7Dnuof'
-console.log(solution(str))
+console.log(solution("found7, time: study; Yduts; emit, 7Dnuof")); // YES
+console.log(solution("found7, time: study; Yduts; emiU, 7Dnuof")); // NO
