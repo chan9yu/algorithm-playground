@@ -6,7 +6,7 @@
 
 ## 알고리즘 정리
 
-- [동적계획법(DP, Dynamic Programming)](https://github.com/chan9yu/algorithm-playground/blob/master/lecture/10-dynamic_programming/README.md)
+- [동적계획법(DP, Dynamic Programming)](https://github.com/chan9yu/algorithm-playground/blob/main/note/dynamic_programming.md)
 
 <br />
 
