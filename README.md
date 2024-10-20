@@ -1,6 +1,6 @@
 # 🧑🏻‍💻 Algorithm Playground
 
-공부해야해요 ㅠㅠ...
+> 공부해야해요 ㅠㅠ...
 
 <br />
 
@@ -23,7 +23,7 @@ const input = fs.readFileSync("/...").toString().split(" ");
 const num = Number(input);
 
 for (let i = 1; i <= num; i++) {
-	console.log(i);
+  console.log(i);
 }
 ```
 
@@ -35,14 +35,14 @@ const input = fs.readFileSync("/...").toString().split("\n");
 const numbers = [];
 
 for (let i = 1; i < input.length; i++) {
-	if (input[i] !== "") {
-		numbers.push(input[i].split(" "));
-	}
+  if (input[i] !== "") {
+    numbers.push(input[i].split(" "));
+  }
 }
 
 for (let i = 0; i < numbers.length; i++) {
-	let num1 = Number(numbers[i][0]);
-	let num2 = Number(numbers[i][1]);
-	console.log(num1 + num2);
+  let num1 = Number(numbers[i][0]);
+  let num2 = Number(numbers[i][1]);
+  console.log(num1 + num2);
 }
 ```
