@@ -2,7 +2,16 @@
 
 > ✍🏼 algorithm playground repository
 
-알고리즘에 대한 내용을 학습하고 문제풀이를 기록합니다
+알고리즘에 대한 내용을 학습하고 문제풀이를 기록합니다.
+
+<br />
+
+## 🗂️ Documents
+
+### [1주차] 시간 복잡도 & 공간복잡도
+
+1. [시간 복잡도란?](./__documents__/01-01-time-complexity.md)
+1. [공간 복잡도란?](./__documents__/01-02-space-complexity.md)
 
 <br />
 
