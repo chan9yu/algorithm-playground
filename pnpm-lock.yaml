@@ -8,17 +8,11 @@ importers:
 
   .:
     devDependencies:
-      fs:
-        specifier: ^0.0.1-security
-        version: 0.0.1-security
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
 
 packages:
-
-  fs@0.0.1-security:
-    resolution: {integrity: sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==}
 
   prettier@3.3.3:
     resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
@@ -26,7 +20,5 @@ packages:
     hasBin: true
 
 snapshots:
-
-  fs@0.0.1-security: {}
 
   prettier@3.3.3: {}

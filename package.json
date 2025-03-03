@@ -1,15 +1,14 @@
 {
-	"name": "algorithm-playground",
-	"private": true,
-	"description": "✍🏼 algorithm playground repository",
-	"author": "chan9yu <dev.cgyeo@gmail.com>",
-	"packageManager": "pnpm@9.15.0",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/chan9yu/algorithm-playground"
-	},
-	"devDependencies": {
-		"fs": "^0.0.1-security",
-		"prettier": "^3.3.3"
-	}
+  "name": "algorithm-playground",
+  "private": true,
+  "description": "✍🏼 algorithm playground repository",
+  "author": "chan9yu <dev.cgyeo@gmail.com>",
+  "packageManager": "pnpm@9.15.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chan9yu/algorithm-playground"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
 }
