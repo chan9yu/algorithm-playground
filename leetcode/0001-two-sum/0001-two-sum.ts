@@ -1,27 +1,13 @@
 function twoSum(nums: number[], target: number): number[] {
-  const answer = []
-  let left = 0;
+	const map = new Map();
 
-  for (let right = left + 1; right < nums.length; right++) {
-    if (nums[left] + nums[right] === target) {
-        answer.push(left);
-        answer.push(right);
-        break;
-    } 
-    
-    if (left + 1 === right) {
-        continue;
-    } else {
-        while(left !== right - 1) {
-            left += 1
-            if (nums[left] + nums[right] === target) {
-                answer.push(left);
-                answer.push(right);
-                break;
-            }
-        }
-    }
-  }
+	for (let i = 0; i < nums.length; i++) {
+		const complement = target - nums[i];
 
-  return answer  
-};
+		if (map.has(complement)) {
+			return [map.get(complement), i];
+		}
+
+		map.set(nums[i], i);
+	}
+}
