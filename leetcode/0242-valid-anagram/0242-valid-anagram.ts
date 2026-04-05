@@ -1,21 +1,21 @@
 function isAnagram(s: string, t: string): boolean {
-    const sH = new Map();
+    const map = new Map();
 
-    for (let v of s) {
-        sH.has(v) ? sH.set(v, sH.get(v) + 1) : sH.set(v, 1)
+    for (const v of s) {
+        map.set(v, (map.get(v) ?? 0) + 1);
     }
 
-    for (let v of t) {
-        if (sH.has(v)) {
-            sH.set(v, sH.get(v) - 1);
+    for (const v of t) {
+        if (map.has(v)) {
+            map.set(v, map.get(v) - 1);
 
-            if (sH.get(v) === 0) {
-                sH.delete(v);
+            if (map.get(v) === 0) {
+                map.delete(v);
             }
         } else {
             return false;
         }
     }
 
-    return [...sH].length ? false : true;
+    return map.size === 0 ? true : false;
 };
