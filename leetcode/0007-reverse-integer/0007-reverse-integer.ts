@@ -5,13 +5,13 @@ function reverse(x: number): number {
     let right = arr.length - 1;
 
     while (left < right) {
-        const tmpLeftVal = arr[left];
+        const temp = arr[left];
 
-        if (tmpLeftVal === '-') {
+        if (temp === '-') {
             left += 1;
         } else {
             arr[left] = arr[right];
-            arr[right] = tmpLeftVal;
+            arr[right] = temp;
             left += 1;
             right -= 1;
         }
