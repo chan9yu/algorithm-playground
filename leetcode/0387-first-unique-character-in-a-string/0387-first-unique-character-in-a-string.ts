@@ -1,6 +1,6 @@
 function firstUniqChar(s: string): number {
     const map = new Map();
-
+    
     for (let v of s) {
         map.set(v, (map.get(v) ?? 0) + 1);
     }
