@@ -1,8 +1,8 @@
-function reverse(arr, left, right) {
-    while (left < right) {
-        [arr[left], arr[right]] = [arr[right], arr[left]]
-        left += 1;
-        right -= 1;
+function reverse(arr, start, end) {
+    while (start < end) {
+        [arr[start], arr[end]] = [arr[end], arr[start]];
+        start += 1;
+        end -= 1;
     }
 }
 
@@ -10,7 +10,7 @@ function reverse(arr, left, right) {
  Do not return anything, modify nums in-place instead.
  */
 function rotate(nums: number[], k: number): void {
-    let n = nums.length;
+    const n = nums.length;
     k = k % n;
 
 	// 1. 전체 배열 뒤집기
