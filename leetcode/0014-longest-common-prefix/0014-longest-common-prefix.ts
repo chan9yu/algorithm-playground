@@ -3,7 +3,7 @@ function longestCommonPrefix(strs: string[]): string {
 
     for (let i = 0; i < answer.length; i++) {
         for (let j = 1; j < strs.length; j++) {
-            if (strs[j][i] === answer[i]) continue;
+            if (answer[i] === strs[j][i]) continue;
             return answer.slice(0, i);
         }
     }
